@@ -11,12 +11,12 @@ public class Fungsi27 {
         };
         int[] hargaBunga = {75000, 50000, 60000, 10000};
 
-        tampilkanPendapatan(namaCabang, stockBunga, hargaBunga);
+        tampilkanPendapatanDanStatus(namaCabang, stockBunga, hargaBunga);
     }
 
-    public static void tampilkanPendapatan(String[] cabang, int[][] stock, int[] harga) {
-        System.out.printf("%-15s | %-15s\n", "Cabang", "Pendapatan");
-        System.out.println("===================================");
+    public static void tampilkanPendapatanDanStatus(String[] cabang, int[][] stock, int[] harga) {
+        System.out.printf("%-15s | %-15s | %-15s\n", "Cabang", "Pendapatan", "Status");
+        System.out.println("=========================================================");
 
         for (int i = 0; i < stock.length; i++) {
             int pendapatan = 0;
@@ -24,7 +24,9 @@ public class Fungsi27 {
                 pendapatan += stock[i][j] * harga[j];
             }
 
-            System.out.printf("%-15s | Rp %-12d\n", cabang[i], pendapatan);
+            String status = (pendapatan > 1500000) ? "Sangat Baik" : "Perlu Evaluasi";
+            
+            System.out.printf("%-15s | Rp %-12d | %-15s\n", cabang[i], pendapatan, status);
         }
     }
 }
