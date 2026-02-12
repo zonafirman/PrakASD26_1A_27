@@ -52,6 +52,7 @@ public class Pemilihan27 {
                 keterangan = "LULUS";
             }
 
+            System.out.println("Nilai Akhir: " + nilaiAkhir);
             System.out.println("Nilai Huruf: " + nilaiHuruf);
             System.out.println("==============================");
             System.out.println("==============================");
