@@ -56,7 +56,11 @@ public class Pemilihan27 {
             System.out.println("Nilai Huruf: " + nilaiHuruf);
             System.out.println("==============================");
             System.out.println("==============================");
-            System.out.println("SELAMAT ANDA " + keterangan);
+            if (keterangan.equals("LULUS")) {
+                System.out.println("SELAMAT ANDA " + keterangan);
+            } else {
+                System.out.println("MAAF ANDA " + keterangan);
+            }
         }
 
         input.close();
