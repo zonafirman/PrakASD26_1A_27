@@ -14,6 +14,11 @@ public class TugasNo2_27 {
         inputJadwal(jadwal);
 
         tampilkanSemua(jadwal);
+
+        System.out.print("\nCari jadwal berdasarkan HARI: ");
+        String hariCari = sc.nextLine();
+        tampilkanBerdasarkanHari(jadwal, hariCari);
+
     }
 
     public static void inputJadwal(String[][] data) {
@@ -37,6 +42,18 @@ public class TugasNo2_27 {
         for (String[] row : data) {
             System.out.printf("%-25s | %-15s | %-10s | %-10s\n", row[0], row[1], row[2], row[3]);
         }
+    }
+
+    public static void tampilkanBerdasarkanHari(String[][] data, String hari) {
+        System.out.println("\nJadwal pada hari " + hari + ":");
+        boolean ditemukan = false;
+        for (String[] row : data) {
+            if (row[2].equalsIgnoreCase(hari)) {
+                System.out.printf("- %s (%s) di %s\n", row[0], row[3], row[1]);
+                ditemukan = true;
+            }
+        }
+        if (!ditemukan) System.out.println("Tidak ada jadwal pada hari tersebut.");
     }
 }
 
