@@ -19,6 +19,9 @@ public class TugasNo2_27 {
         String hariCari = sc.nextLine();
         tampilkanBerdasarkanHari(jadwal, hariCari);
 
+        System.out.print("\nCari jadwal berdasarkan NAMA MATA KULIAH: ");
+        String mkCari = sc.nextLine();
+        tampilkanBerdasarkanMK(jadwal, mkCari);
     }
 
     public static void inputJadwal(String[][] data) {
@@ -54,6 +57,18 @@ public class TugasNo2_27 {
             }
         }
         if (!ditemukan) System.out.println("Tidak ada jadwal pada hari tersebut.");
+    }
+
+    public static void tampilkanBerdasarkanMK(String[][] data, String mk) {
+        System.out.println("\nInformasi untuk Mata Kuliah " + mk + ":");
+        boolean ditemukan = false;
+        for (String[] row : data) {
+            if (row[0].equalsIgnoreCase(mk)) {
+                System.out.printf("Ruang: %s | Hari: %s | Jam: %s\n", row[1], row[2], row[3]);
+                ditemukan = true;
+            }
+        }
+        if (!ditemukan) System.out.println("Mata kuliah tidak ditemukan.");
     }
 }
 
