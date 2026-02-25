@@ -11,5 +11,12 @@ public class MataKuliah27 {
         this.nama = nama;
         this.sks = sks;
         this.jumlahJam = jumlahJam;
-}
+    }
+
+    public void tambahData(String kodeBaru, String namaBaru, int sksBaru, int jumlahJamBaru) {
+        this.kode = kodeBaru;
+        this.nama = namaBaru;
+        this.sks = sksBaru;
+        this.jumlahJam = jumlahJamBaru;
+    }
 }
