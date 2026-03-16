@@ -21,4 +21,11 @@ public class uts27 {
         int minKanan = cariMinDC(arr, tengah + 1, kanan);
         return Math.min(minKiri, minKanan);
     }
+    public static double cariRataRataBF(int[] arr) {
+        int total = 0;
+        for (int i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+        return (double) total / arr.length;
+    }
 }
