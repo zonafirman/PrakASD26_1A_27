@@ -2,13 +2,13 @@ package P6;
 
 public class SortingMain27 {
     public static void main(String[] args) {
-      int b[] = {30, 20, 2, 8, 14};
-        Sorting27 dataurut2 = new Sorting27(b, b.length);
+    int c[] = {40, 10, 4, 9, 3};
+        Sorting27 dataurut3 = new Sorting27(c, c.length);
         
-        System.out.println("\nData awal 2");
-        dataurut2.tampil();
-        dataurut2.SelectionSort();
-        System.out.println("Data sudah diurutkan dengan SELECTION SORT (ASC)");
-        dataurut2.tampil();
+        System.out.println("\nData awal 3");
+        dataurut3.tampil();
+        dataurut3.insertionSort();
+        System.out.println("Data sudah diurutkan dengan INSERTION SORT (ASC)");
+        dataurut3.tampil();
     }
 }
