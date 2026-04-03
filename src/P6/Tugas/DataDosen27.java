@@ -22,4 +22,16 @@ public class DataDosen27 {
             dataDosen[i].tampil();
         }
     }
+
+    public void SortingASC() {
+        for (int i = 0; i < idx - 1; i++) {
+            for (int j = 1; j < idx - i; j++) {
+                if (dataDosen[j].usia < dataDosen[j - 1].usia) {
+                    Dosen27 temp = dataDosen[j];
+                    dataDosen[j] = dataDosen[j - 1];
+                    dataDosen[j - 1] = temp;
+                }
+            }
+        }
+    }
 }
