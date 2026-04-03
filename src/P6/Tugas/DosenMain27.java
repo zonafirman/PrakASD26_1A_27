@@ -13,7 +13,8 @@ public class DosenMain27 {
             System.out.println("1. Tambah Data");
             System.out.println("2. Tampil Data");
             System.out.println("3. Urutkan Data (ASC)");
-            System.out.println("4. Keluar");
+            System.out.println("4. Urutkan Data (DESC)");
+            System.out.println("5. Keluar");
             System.out.print("Pilih menu: ");
             menu = sc.nextInt();
             sc.nextLine(); 
@@ -43,12 +44,16 @@ public class DosenMain27 {
                     System.out.println("Data berhasil diurutkan secara ASCENDING (Bubble Sort)!\n");
                     break;
                 case 4:
+                    dd.sortingDSC(); 
+                    System.out.println("Data berhasil diurutkan secara DESCENDING (Selection Sort)!\n");
+                    break;
+                case 5:
                     System.out.println("Keluar dari program.");
                     break;
                 default:
                     System.out.println("Menu tidak valid!\n");
             }
-        } while (menu != 4);
+        } while (menu != 5);
 
         sc.close();
     }

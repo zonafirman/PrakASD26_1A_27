@@ -34,4 +34,30 @@ public class DataDosen27 {
             }
         }
     }
+
+    public void sortingDSC() {
+        for (int i = 0; i < idx - 1; i++) {
+            int maxIdx = i;
+            for (int j = i + 1; j < idx; j++) {
+                if (dataDosen[j].usia > dataDosen[maxIdx].usia) {
+                    maxIdx = j;
+                }
+            }
+            Dosen27 temp = dataDosen[maxIdx];
+            dataDosen[maxIdx] = dataDosen[i];
+            dataDosen[i] = temp;
+        }
+    }
+
+    public void insertionSort() {
+        for (int i = 1; i < idx; i++) {
+            Dosen27 temp = dataDosen[i];
+            int j = i;
+            while (j > 0 && dataDosen[j - 1].usia < temp.usia) {
+                dataDosen[j] = dataDosen[j - 1];
+                j--;
+            }
+            dataDosen[j] = temp;
+        }
+    }
 }
