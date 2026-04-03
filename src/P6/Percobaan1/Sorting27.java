@@ -1,4 +1,4 @@
-package P6;
+package P6.Percobaan1;
 
 public class Sorting27 {
     int[] data;

@@ -1,4 +1,4 @@
-package P6;
+package P6.Percobaan1;
 
 public class SortingMain27 {
     public static void main(String[] args) {

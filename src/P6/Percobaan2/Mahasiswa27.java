@@ -1,4 +1,4 @@
-package P6;
+package P6.Percobaan2;
 
 public class Mahasiswa27 {
     String nim;

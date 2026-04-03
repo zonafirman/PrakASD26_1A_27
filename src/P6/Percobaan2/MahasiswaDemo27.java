@@ -1,4 +1,4 @@
-package P6;
+package P6.Percobaan2;
 
 public class MahasiswaDemo27 {
   public static void main(String[] args) {

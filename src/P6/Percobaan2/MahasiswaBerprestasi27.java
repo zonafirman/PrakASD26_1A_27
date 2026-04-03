@@ -1,4 +1,4 @@
-package P6;
+package P6.Percobaan2;
 
 public class MahasiswaBerprestasi27 {
     Mahasiswa27[] listMhs = new Mahasiswa27[5];
