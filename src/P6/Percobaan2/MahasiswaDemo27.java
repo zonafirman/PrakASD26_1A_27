@@ -1,24 +1,41 @@
 package P6.Percobaan2;
+import java.util.Scanner;
 
 public class MahasiswaDemo27 {
-  public static void main(String[] args) {
-    MahasiswaBerprestasi27 list = new MahasiswaBerprestasi27();
-    Mahasiswa27 m1 = new Mahasiswa27("111", "ayu", "2c", 3.7);
-    Mahasiswa27 m2 = new Mahasiswa27("222", "dika", "2c", 3.0);
-    Mahasiswa27 m3 = new Mahasiswa27("333", "ila", "2c", 3.8);
-    Mahasiswa27 m4 = new Mahasiswa27("444", "susi", "2c", 3.1);
-    Mahasiswa27 m5 = new Mahasiswa27("555", "yayuk", "2c", 3.4);
+    public static void main(String[] args) {
+        MahasiswaBerprestasi27 list = new MahasiswaBerprestasi27();
+        Scanner sc = new Scanner(System.in);
+        int jumMhs = 5;
 
-    list.tambah(m1);
-    list.tambah(m2);
-    list.tambah(m3);
-    list.tambah(m4);
-    list.tambah(m5);
-    System.out.println("Data Mahasiswa27 sebelum sorting: ");
-    list.tampil();
+        for(int i = 0; i < jumMhs; i++) {
+            System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
+            System.out.print("NIM : ");
+            String nim = sc.nextLine();
+            System.out.print("Nama: ");
+            String nama = sc.nextLine();
+            System.out.print("Kelas: ");
+            String kelas = sc.nextLine();
+            System.out.print("IPK: ");
+            String ip = sc.nextLine();
+            double ipk = Double.parseDouble(ip);
+            
+            System.out.println("-----------------------------------");
+            list.tambah(new Mahasiswa27(nim, nama, kelas, ipk));
+        }
 
-    System.out.println("Data yang sudah terurut menggunakan INSERTION SORT (ASC)");
-    list.insertionSort();
-    list.tampil();
-  }
+        list.tampil();
+
+        System.out.println("-----------------------------------");
+        System.out.println("Pencarian data");
+        System.out.println("-----------------------------------");
+        System.out.println("masukkan ipk mahasiswa yang dicari: ");
+        System.out.print("IPK: ");
+        String ipCari = sc.nextLine();
+        double cari = Double.parseDouble(ipCari);
+
+        System.out.println("menggunakan sequential searching");
+        int posisi = list.sequentialSearching(cari);
+        list.tampilPosisi(cari, posisi);
+        list.tampilDataSearch(cari, posisi);
+    }
 }
