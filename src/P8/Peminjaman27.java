@@ -15,7 +15,7 @@ public class Peminjaman27 {
         this.lamaPinjam = lamaPinjam;
         hitungDenda();
     }
-
+ 
     public void hitungDenda() {
         if (lamaPinjam > batasPinjam) {
             terlambat = lamaPinjam - batasPinjam;
@@ -27,7 +27,14 @@ public class Peminjaman27 {
     }
 
     public void tampilPeminjaman() {
-        System.out.println(mhs.nama + " \t| " + buku.judul + " \t| Lama: " + lamaPinjam 
+        if (lamaPinjam >14){
+            System.out.println(" Peringatan : Lama Pinjam Melebihi batas Normal, data tidak bisa masuk ke array of object");
+        }else if (lamaPinjam <= 0) {
+             System.out.println(" Tdiak ada data");
+        }else{
+            System.out.println(mhs.nama + " \t| " + buku.judul + " \t| Lama: " + lamaPinjam 
                 + " | Terlambat: " + terlambat + " | Denda: " + denda);
+        }
+        
     }
 }

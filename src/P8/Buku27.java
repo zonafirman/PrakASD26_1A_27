@@ -14,4 +14,5 @@ public class Buku27 {
     public void tampilBuku() {
         System.out.println("Kode: " + kodeBuku + " | Judul: " + judul + " | Tahun: " + tahunTerbit);
     }
+    
 }

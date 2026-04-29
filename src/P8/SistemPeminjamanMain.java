@@ -7,24 +7,25 @@ public class SistemPeminjamanMain {
         Scanner sc = new Scanner(System.in);
 
         Mahasiswa27[] daftarMhs = {
-            new Mahasiswa27("22001", "Andi", "Teknik Informatika"),
-            new Mahasiswa27("22002", "Budi", "Teknik Informatika"),
-            new Mahasiswa27("22003", "Citra", "Sistem Informasi Bisnis")
+                new Mahasiswa27("22001", "Andi", "Teknik Informatika"),
+                new Mahasiswa27("22002", "Budi", "Teknik Informatika"),
+                new Mahasiswa27("22003", "Citra", "Sistem Informasi Bisnis")
         };
 
         Buku27[] daftarBuku = {
-            new Buku27("B001", "Algoritma", 2020),
-            new Buku27("B002", "Basis Data", 2019),
-            new Buku27("B003", "Pemrograman", 2021),
-            new Buku27("B004", "Fisika", 2024)
+                new Buku27("B001", "Algoritma", 2020),
+                new Buku27("B002", "Basis Data", 2019),
+                new Buku27("B003", "Pemrograman", 2021),
+                new Buku27("B004", "Fisika", 2024)
         };
 
         Peminjaman27[] daftarPinjam = {
-            new Peminjaman27(daftarMhs[0], daftarBuku[0], 7),
-            new Peminjaman27(daftarMhs[1], daftarBuku[1], 3),
-            new Peminjaman27(daftarMhs[2], daftarBuku[2], 10),
-            new Peminjaman27(daftarMhs[2], daftarBuku[3], 6),
-            new Peminjaman27(daftarMhs[0], daftarBuku[1], 4)
+                new Peminjaman27(daftarMhs[0], daftarBuku[0], 7),
+                new Peminjaman27(daftarMhs[1], daftarBuku[1], 0),
+                new Peminjaman27(daftarMhs[2], daftarBuku[2], 14),
+                new Peminjaman27(daftarMhs[2], daftarBuku[3], 6),
+                new Peminjaman27(daftarMhs[0], daftarBuku[0], 5),
+               new Peminjaman27(daftarMhs[1], daftarBuku[1], 14)
         };
 
         int pilihan;
@@ -38,7 +39,7 @@ public class SistemPeminjamanMain {
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilihan = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -67,9 +68,9 @@ public class SistemPeminjamanMain {
                     }
                     break;
                 case 5:
-                    System.out.print("Masukkan NIM: ");
-                    String cariNim = sc.nextLine();
-                    binarySearchNim(daftarPinjam, cariNim);
+                    System.out.print("Masukkan Nama: ");
+                    String cariNama = sc.nextLine();
+                    binarySearchNim(daftarPinjam, cariNama);
                     break;
                 case 0:
                     System.out.println("Terima kasih.");
@@ -78,7 +79,7 @@ public class SistemPeminjamanMain {
                     System.out.println("Pilihan tidak valid!");
             }
         } while (pilihan != 0);
-        
+
         sc.close();
     }
 
@@ -107,7 +108,7 @@ public class SistemPeminjamanMain {
     }
 
     public static void binarySearchNim(Peminjaman27[] arr, String targetNim) {
-        sortNimAsc(arr); 
+        sortNimAsc(arr);
 
         int left = 0;
         int right = arr.length - 1;
@@ -115,28 +116,32 @@ public class SistemPeminjamanMain {
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int compare = arr[mid].mhs.nim.compareTo(targetNim);
-
+            int compare = arr[mid].mhs.nama.compareToIgnoreCase(targetNim);
             if (compare == 0) {
                 j = mid;
-                right = mid - 1; 
+                right = mid - 1;
             } else if (compare < 0) {
                 left = mid + 1;
             } else {
-                right = mid - 1;
+                right = mid - 1;    
             }
         }
+        
 
         if (j != -1) {
             for (int i = j; i < arr.length; i++) {
-                if (arr[i].mhs.nim.equals(targetNim)) {
+                if (arr[i].mhs.nama.equalsIgnoreCase(targetNim)) {
                     arr[i].tampilPeminjaman();
+                    
+                    
                 } else {
                     break;
                 }
             }
         } else {
-            System.out.println("Data peminjaman dengan NIM " + targetNim + " tidak ditemukan.");
+            System.out.println("Data peminjaman dengan Nama " + targetNim + " tidak ditemukan.");
         }
     }
+
+  
 }
