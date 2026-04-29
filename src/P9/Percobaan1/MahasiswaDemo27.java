@@ -18,7 +18,6 @@ public class MahasiswaDemo27 {
             pilih = scan.nextInt();
 
             scan.nextLine();
-
             switch (pilih) {
                 case 1:
                     System.out.print("Nama: ");

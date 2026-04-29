@@ -49,7 +49,7 @@ public class StackTugasMahasiswa27 {
 
     public Mahasiswa27 peek() {
         if (!isEmpty()) {
-            return stack[top];
+            return stack[0];
         } else {
         }
         System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");

@@ -12,7 +12,6 @@ public class Mahasiswa27 {
         this.kelas = kelas;
         nilai = -1;
     }
-
     void tugasDinilai(int nilai){
         this.nilai = nilai;
     }
