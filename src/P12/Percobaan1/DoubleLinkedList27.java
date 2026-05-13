@@ -80,4 +80,16 @@ public class DoubleLinkedList27 {
     public void removeLast() {
         System.out.println("Belum diimplementasikan (lanjut di Percobaan 2)");
     }
+
+    public void printReverse() {
+    if (isEmpty()) {
+        System.out.println("Linked List masih kosong.");
+        return;
+    }
+    Node27 current = tail;
+    while (current != null) {
+        current.data.tampil();
+        current = current.prev;
+    }
+}
 }
