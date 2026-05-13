@@ -19,7 +19,7 @@ public class DoubleLinkedListMain27 {
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             pilihan = scan.nextInt();
-            scan.nextLine(); // clear buffer
+            scan.nextLine();
 
             switch (pilihan) {
                 case 1:
