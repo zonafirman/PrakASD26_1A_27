@@ -73,31 +73,36 @@ public class DoubleLinkedList27 {
         }
     }
     
-   public void removeFirst() {
-        if (isEmpty()) {
-            System.out.println("Linked List kosong.");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
-        } else {
-            head = head.next;
-            head.prev = null;
-        }
+ public void removeFirst() {
+    if (isEmpty()) {
+        System.out.println("Linked List kosong.");
+        return;
     }
+    System.out.println("Data berhasil dihapus:");
+    head.data.tampil();
+    if (head == tail) {
+        head = tail = null;
+    } else {
+        head = head.next;
+        head.prev = null;
+    }
+}
 
-    public void removeLast() {
-        if (isEmpty()) {
-            System.out.println("Linked List kosong.");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
-        } else {
-            tail = tail.prev;
-            tail.next = null;
-        }
+public void removeLast() {
+    if (isEmpty()) {
+        System.out.println("Linked List kosong.");
+        return;
     }
+    System.out.println("Data berhasil dihapus:");
+    tail.data.tampil();
+
+    if (head == tail) {
+        head = tail = null;
+    } else {
+        tail = tail.prev;
+        tail.next = null;
+    }
+}
     public void printReverse() {
     if (isEmpty()) {
         System.out.println("Linked List masih kosong.");
