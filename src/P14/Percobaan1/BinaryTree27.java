@@ -202,4 +202,18 @@ public class BinaryTree27 {
         System.out.println("Mahasiswa dengan IPK terbesar:");
         current.mahasiswa.tampilInformasi();
     }
+
+     public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        System.out.println("Mahasiswa dengan IPK di atas " + ipkBatas + ":");
+        tampilIPKdiAtasHelper(root, ipkBatas);
+    }
+
+    public void tampilIPKdiAtasHelper(Node27 node, double ipkBatas) {
+        if (node == null) return;
+        tampilIPKdiAtasHelper(node.left, ipkBatas);
+        if (node.mahasiswa.ipk > ipkBatas) {
+            node.mahasiswa.tampilInformasi();
+        }
+        tampilIPKdiAtasHelper(node.right, ipkBatas);
+    }
 }
