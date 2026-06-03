@@ -43,7 +43,7 @@ public class BinaryTree27 {
         root = addRekursifHelper(root, mahasiswa);
     }
 
-    private Node27 addRekursifHelper(Node27 current, Mahasiswa27 mahasiswa) {
+    public Node27 addRekursifHelper(Node27 current, Mahasiswa27 mahasiswa) {
         if (current == null) {
             return new Node27(mahasiswa);
         }
@@ -175,45 +175,5 @@ public class BinaryTree27 {
                 successor.left = current.left;
             }
         }
-    }
-
-    public void cariMinIPK() {
-        if (isEmpty()) {
-            System.out.println("Tree kosong");
-            return;
-        }
-        Node27 current = root;
-        while (current.left != null) {
-            current = current.left;
-        }
-        System.out.println("Mahasiswa dengan IPK terkecil:");
-        current.mahasiswa.tampilInformasi();
-    }
-
-    public void cariMaxIPK() {
-        if (isEmpty()) {
-            System.out.println("Tree kosong");
-            return;
-        }
-        Node27 current = root;
-        while (current.right != null) {
-            current = current.right;
-        }
-        System.out.println("Mahasiswa dengan IPK terbesar:");
-        current.mahasiswa.tampilInformasi();
-    }
-
-    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
-        System.out.println("Mahasiswa dengan IPK di atas " + ipkBatas + ":");
-        tampilIPKdiAtasHelper(root, ipkBatas);
-    }
-
-    private void tampilIPKdiAtasHelper(Node27 node, double ipkBatas) {
-        if (node == null) return;
-        tampilIPKdiAtasHelper(node.left, ipkBatas);
-        if (node.mahasiswa.ipk > ipkBatas) {
-            node.mahasiswa.tampilInformasi();
-        }
-        tampilIPKdiAtasHelper(node.right, ipkBatas);
     }
 }
