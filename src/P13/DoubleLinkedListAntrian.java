@@ -4,9 +4,13 @@ class DoubleLinkedListAntrian {
     NodeAntrian tail;
     int size = 0;
 
+    boolean isEmpty() {
+        return head == null;
+    }
+
     void tambahAntrian(int no, Pembeli p) {
         NodeAntrian newNode = new NodeAntrian(no, p);
-        if (head == null) {
+        if (isEmpty()) {
             head = tail = newNode;
         } else {
             tail.next = newNode;
@@ -17,7 +21,7 @@ class DoubleLinkedListAntrian {
     }
 
     NodeAntrian hapusAntrianPertama() {
-        if (head == null) {
+        if (isEmpty()) {
             return null;
         }
         NodeAntrian temp = head;
@@ -32,7 +36,7 @@ class DoubleLinkedListAntrian {
     }
 
     void cetakAntrian() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Antrian Kosong.");
             return;
         }

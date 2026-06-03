@@ -4,9 +4,13 @@ class DoubleLinkedListPesanan {
     NodePesanan head;
     NodePesanan tail;
 
+    boolean isEmpty() {
+        return head == null;
+    }
+
     void tambahPesanan(Pesanan p) {
         NodePesanan newNode = new NodePesanan(p);
-        if (head == null) {
+        if (isEmpty()) {
             head = tail = newNode;
         } else {
             tail.next = newNode;
@@ -16,7 +20,7 @@ class DoubleLinkedListPesanan {
     }
 
     void urutkanBerdasarkanNama() {
-        if (head == null || head.next == null) {
+        if (isEmpty() || head.next == null) {
             return;
         }
         boolean swapped;
@@ -34,14 +38,28 @@ class DoubleLinkedListPesanan {
                 current = current.next;
             }
         } while (swapped);
-    }
+    
 
+
+    }
+        boolean updatePesanan(int kodePesanan, String menuBaru, int hargaBaru) {
+        NodePesanan current = head;
+        while (current != null) {
+            if (current.pesanan.kodePesanan == kodePesanan) {
+                current.pesanan.namaPesanan = menuBaru;
+                current.pesanan.harga = hargaBaru;
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     void cetakLaporan() {
-        urutkanBerdasarkanNama();
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Belum ada laporan pesanan.");
             return;
         }
+        urutkanBerdasarkanNama();
         System.out.println("=========================================");
         System.out.println("LAPORAN PESANAN (URUT NAMA PESANAN)");
         System.out.println("=========================================");
