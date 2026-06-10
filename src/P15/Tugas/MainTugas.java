@@ -1,5 +1,4 @@
 package P15.Tugas;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -63,7 +62,8 @@ public class MainTugas {
             System.out.println("2. Tampil Nilai");
             System.out.println("3. Mencari Nilai Mahasiswa");
             System.out.println("4. Urut Data Nilai");
-            System.out.println("5. Keluar");
+            System.out.println("5. Hapus Data Mahasiswa (Implementasi Queue)");
+            System.out.println("6. Keluar");
             System.out.print("Pilih : ");
             menu = sc.nextInt();
             sc.nextLine(); 
@@ -82,6 +82,9 @@ public class MainTugas {
                     urutDataNilai();
                     break;
                 case 5:
+                    hapusMahasiswaQueue();
+                    break;
+                case 6:
                     System.out.println("Terima kasih!");
                     break;
                 default:
@@ -89,8 +92,8 @@ public class MainTugas {
             }
         } while (menu != 6);
     }
+
     static void inisialisasiData() {
-        // Data Mahasiswa Awal
         listMahasiswa.add(new Mahasiswa("20001", "Thalhah", "021xxx"));
         listMahasiswa.add(new Mahasiswa("20002", "Zubair", "021xxx"));
         listMahasiswa.add(new Mahasiswa("20003", "Abdur-Rahman", "021xxx"));
@@ -105,9 +108,6 @@ public class MainTugas {
         listMk.add(new MataKuliah("00003", "Algoritma dan Pemrograman", "2"));
         listMk.add(new MataKuliah("00004", "Praktikum Algoritma dan Struktur Data", "3"));
         listMk.add(new MataKuliah("00005", "Praktikum Algoritma dan Pemrograman", "3"));
-
-        listNilai.add(new Nilai(listMahasiswa.get(0), listMk.get(0), 90.00));
-        listNilai.add(new Nilai(listMahasiswa.get(1), listMk.get(4), 80.75));
     }
 
     static void inputNilai(Scanner sc) {
@@ -193,5 +193,16 @@ public class MainTugas {
         listNilai.sort((n1, n2) -> Double.compare(n2.nilai, n1.nilai));
         System.out.println("Data berhasil diurutkan berdasarkan Nilai terbesar!");
         tampilNilai();
+    }
+
+    static void hapusMahasiswaQueue() {
+        if (!queueMahasiswa.isEmpty()) {
+            Mahasiswa mhsDihapus = queueMahasiswa.poll(); 
+            System.out.println("Berhasil menghapus mahasiswa antrian terdepan: " + mhsDihapus.nama + " (" + mhsDihapus.nim + ")");
+            
+            listNilai.removeIf(n -> n.mhs.nim.equals(mhsDihapus.nim));
+        } else {
+            System.out.println("Antrian Mahasiswa sudah kosong!");
+        }
     }
 }
