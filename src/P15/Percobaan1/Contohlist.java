@@ -27,6 +27,7 @@ class ContohList27 {
         names.add("Shannum");
         names.add("Uwais");
         names.add("Al-Qarni");
+        names.add("Mei-Mei");
         
         System.out.printf("Elemen 0: %s total elemen: %s elemen terakhir: %s\n",
                 names.get(0), names.size(), names.get(names.size() - 1));
