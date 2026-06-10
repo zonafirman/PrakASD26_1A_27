@@ -10,7 +10,7 @@ class ContohList27 {
         l.add(1);
         l.add(2);
         l.add(3);
-        l.add("Cireng");
+        l.add(4);
         
         System.out.printf("Elemen 0: %d total elemen: %d elemen terakhir: %s\n",
                 l.get(0), l.size(), l.get(l.size() - 1));
