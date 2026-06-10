@@ -1,4 +1,5 @@
 package P15.Percobaan2;
+
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -10,7 +11,10 @@ public class LoopCollection27 {
         fruits.add("Watermelon");
         fruits.add("Leci");
         fruits.push("Salak");
-        fruits.set(fruits.size() - 1, "Strawberry");
+        fruits.add("Mango");
+        fruits.add("guava");
+        fruits.add("avocado");
+        java.util.Collections.sort(fruits);
 
         for (String fruit : fruits) {
             System.out.printf("%s ", fruit);
@@ -25,7 +29,7 @@ public class LoopCollection27 {
         fruits.push("Durian");
         System.out.println("");
 
-        for (Iterator<String> it = fruits.iterator(); it.hasNext(); ) {
+        for (Iterator<String> it = fruits.iterator(); it.hasNext();) {
             String fruit = it.next();
             System.out.printf("%s ", fruit);
         }
