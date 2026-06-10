@@ -39,6 +39,14 @@ public class ListMahasiswa27 {
         return java.util.Collections.binarySearch(mahasiswas, key, (m1, m2) -> m1.nim.compareTo(m2.nim));
     }
 
+    public void sortAscending() {
+        java.util.Collections.sort(mahasiswas, (m1, m2) -> m1.nim.compareTo(m2.nim));
+    }
+
+    public void sortDescending() {
+        java.util.Collections.sort(mahasiswas, (m1, m2) -> m2.nim.compareTo(m1.nim));
+    }
+
     public static void main(String[] args) {
         ListMahasiswa27 lm = new ListMahasiswa27();
         Mahasiswa27 m = new Mahasiswa27("201234", "Noureen", "021xx1");
